@@ -17,3 +17,6 @@ __pycache__/
 *.synctex.gz
 *.fdb_latexmk
 *.fls
+
+# Our private notes
+instn.md
