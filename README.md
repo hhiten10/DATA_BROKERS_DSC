@@ -1,7 +1,7 @@
 # CSE558 Midterm: Wine Reviews
 
-**Is a wine's score about the wine, or about the critic who tasted it?** Hypothesis testing on 120k WineEnthusiast
-reviews, for the CSE558 Data Science midterm (IIIT-Delhi, Monsoon 2026).
+**Does a wine's score depend on the wine or on the critic?** Hypothesis testing on 120k WineEnthusiast reviews, for
+the CSE558 Data Science midterm (IIIT-Delhi, Monsoon 2026).
 
 Team: Himanshu (MT25068), Yash Verma (MT25092), Ishan Agrawal (MT25025)
 
@@ -41,6 +41,7 @@ data/                    winemag-data-130k-v2.csv (raw, from Kaggle)
 notebooks/midterm.ipynb  cleaning, encoding, exploring and the five tests
 figures/                 plots (PDF, for LaTeX)
 report/main.tex          the LaTeX report (compile on Overleaf with figures/)
+report/report.pdf        the compiled report
 ```
 
 Both prepared tables have 119,895 rows. Their first column, `raw_row`, is the row number in the Kaggle file.
@@ -62,13 +63,13 @@ Both prepared tables have 119,895 rows. Their first column, `raw_row`, is the ro
 | size check (119,895 × 26 = 3,117,270) and the two data files | 2.12 Encode categories and check the size |
 | `figures/fig_price_outliers.pdf` (boxplot, quantile plot, after capping) | 2.10 Handle very high prices |
 | before vs after table | 3 Before vs after cleaning |
-| `figures/fig_points.pdf`, `fig_price_points.pdf`, `fig_tasters.pdf`, `fig_words.pdf` | 4 Exploring the data |
-| T1 Old vs New World: F-test, then Welch t; pooled t as the other test | 5 T1 |
-| T2 review length vs score: t on Pearson r; Welch t as the other test | 5 T2 |
-| T3 price band × 90+: χ² independence; `figures/fig_band90.pdf` | 5 T3 |
-| T4 Gregutt vs Sullivan, 90+ share: two-proportion z; `figures/fig_wa_vintages.pdf` | 5 T4 |
-| T5 Gregutt vs Sullivan, spread: F-test; `figures/fig_qq.pdf` | 5 T5 |
-| summary of the five tests | 5 Summary |
+| `figures/fig_points.pdf`, `fig_price_points.pdf`, `fig_tasters.pdf`, `fig_words.pdf` | 4.1 Plots |
+| Test 1, Old vs New World wines at the same price: F-test, then Welch t; pooled t as the other test | 5.1 Test 1 |
+| Test 2, longer reviews and higher scores: t-test on Pearson r; Welch t as the other test | 5.2 Test 2 |
+| Test 3, price at which 90 or more becomes likely: χ² test for independence; `figures/fig_band90.pdf` | 5.3 Test 3 |
+| Test 4, how often each critic gives 90 or more: z-test for two proportions; `figures/fig_wa_vintages.pdf` | 5.4 Test 4 |
+| Test 5, how widely each critic's scores vary: F-test for two variances; `figures/fig_qq.pdf` | 5.5 Test 5 |
+| summary of the five tests | 5.6 Summary of the five tests |
 
 ## Methods
 
